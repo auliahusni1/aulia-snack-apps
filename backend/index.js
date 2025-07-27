@@ -1,39 +1,50 @@
-const express = require('express');
-const cors = require('cors');
-const sqlite3 = require('sqlite3').verbose();
+const express = require("express");
+const cors = require("cors");
+const sqlite3 = require("sqlite3").verbose();
+const bodyParser = require("body-parser");
+const path = require("path");
+
 const app = express();
+const PORT = 3000;
 
-app.use(cors());
-app.use(express.json());
+app.use(cors({
+  origin: "*", // supaya bisa diakses dari file:// atau live server
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"]
+}));
+app.use(bodyParser.json());
 
-// Buat koneksi database
-const db = new sqlite3.Database('./orders.db');
-
-// Pastikan tabel memiliki kolom waktu
-db.run(`
-  CREATE TABLE IF NOT EXISTS orders (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    nama TEXT,
-    items TEXT,
-    total INTEGER,
-    waktu TEXT
-  )
-`);
-
-// Endpoint untuk menerima data pesanan
-app.post('/api/order', (req, res) => {
-  const { nama, items, total, waktu } = req.body;
-
-  if (!nama || !items || !total || !waktu) {
-    return res.status(400).json({ error: 'Data tidak lengkap' });
+const dbPath = path.join(__dirname, "orders.db");
+const db = new sqlite3.Database(dbPath, (err) => {
+  if (err) {
+    console.error("Gagal koneksi database:", err.message);
+  } else {
+    console.log("Tersambung ke database SQLite");
+    db.run(`
+      CREATE TABLE IF NOT EXISTS pesanan (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        nama TEXT,
+        items TEXT,
+        total INTEGER,
+        waktu TEXT
+      )
+    `);
   }
+});
 
-  const stmt = db.prepare("INSERT INTO orders (nama, items, total, waktu) VALUES (?, ?, ?, ?)");
-  stmt.run(nama, JSON.stringify(items), total, waktu, function (err) {
-    if (err) return res.status(500).json({ error: 'Gagal menyimpan ke database' });
-    res.status(201).json({ message: 'Pesanan berhasil disimpan!', id: this.lastID });
+app.post("/api/pesan", (req, res) => {
+  const { nama, items, total, waktu } = req.body;
+  const query = `INSERT INTO pesanan (nama, items, total, waktu) VALUES (?, ?, ?, ?)`;
+  db.run(query, [nama, JSON.stringify(items), total, waktu], (err) => {
+    if (err) {
+      console.error("Gagal menyimpan ke database:", err.message);
+      res.status(500).json({ error: "Gagal menyimpan ke database" });
+    } else {
+      res.json({ message: "Pesanan berhasil disimpan" });
+    }
   });
 });
 
-// Jalankan server
-app.listen(3000, () => console.log('Server berjalan di http://localhost:3000'));
+app.listen(PORT, () => {
+  console.log(`Server berjalan di http://localhost:${PORT}`);
+});
