@@ -1,9 +1,7 @@
-# 🍱 Aplikasi Pemesanan Makanan Ringan (aulia-snack-app)
-Aplikasi ini adalah project sederhana yang dibuat untuk melakukan **pemesanan makanan ringan (snack)** secara online. Aplikasi ini memiliki tampilan antarmuka yang sederhana namun interaktif, dan sudah dilengkapi backend sederhana untuk pengolahan data.
-Deploy menggunakan platform [Vercel](https://vercel.com) dan dapat digunakan secara langsung.
+#  Aplikasi Pemesanan Makanan Ringan (aulia-snack-app)
+Aplikasi ini adalah project sederhana yang dibuat untuk melakukan **pemesanan makanan ringan (snack)** secara online. Aplikasi ini memiliki tampilan antarmuka yang sederhana namun interaktif, dan sudah dilengkapi backend sederhana untuk pengolahan data. Deploy menggunakan platform [Vercel](https://vercel.com) dan dapat digunakan secara langsung.
 
-
-## 🚀 Fitur Utama
+##  Fitur Utama
 - ✅ Input nama pembeli  
 - ✅ Daftar menu dengan harga 
 - ✅ Input jumlah tiap menu  
