@@ -5,7 +5,7 @@ Deploy menggunakan platform [Vercel](https://vercel.com) dan dapat digunakan sec
 
 ## 🚀 Fitur Utama
 - ✅ Input nama pembeli  
-- ✅ Daftar menu dengan harga tetap  
+- ✅ Daftar menu dengan harga 
 - ✅ Input jumlah tiap menu  
 - ✅ Hitung otomatis **total harga per item**  
 - ✅ Hitung **total keseluruhan harga**  
@@ -13,25 +13,6 @@ Deploy menggunakan platform [Vercel](https://vercel.com) dan dapat digunakan sec
 - ✅ Reset form otomatis setelah submit  
 - ✅ Tombol **Pesan Lagi** untuk mulai ulang  
 - ✅ Terhubung ke backend sederhana  
-
-
-## 🌐 Link Aplikasi
-- 🔗 **Frontend (Vercel)**:  
-  [https://aulia-snack-app.vercel.app](https://aulia-snack-app.vercel.app)
-- 💾 **Source Code (GitHub)**:  
-  [https://github.com/auliahusni1/aulia-snack-app](https://github.com/auliahusni1/aulia-snack-app)
-
-
-## 🧾 Struktur Folder
-aulia-snack-app/
-├── backend/
-│ └── index.js # Backend API (Node.js)
-├── frontend/
-│ ├── index.html # Tampilan antarmuka
-│ ├── style.css # Gaya CSS
-│ └── script.js # Logika interaktif
-├── vercel.json # Konfigurasi untuk deployment Vercel
-
 
 ## Developer
 Nama: Aulia Rahma Husni
