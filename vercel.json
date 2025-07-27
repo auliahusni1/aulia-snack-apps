@@ -4,13 +4,10 @@
     {
       "src": "backend/index.js",
       "use": "@vercel/node"
-<<<<<<< HEAD
-=======
     },
     {
       "src": "frontend/**",
       "use": "@vercel/static"
->>>>>>> 61271cb581d50d385f6bcb4d70afa59821563395
     }
   ],
   "routes": [
