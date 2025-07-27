@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pemesanan Makanan</title>
+  <!-- Path sudah diarahkan ke folder frontend -->
+  <link rel="stylesheet" href="/frontend/style.css" />
+</head>
+<body>
+  <h1>Pemesanan Makanan</h1>
+  <form id="form">
+    <label for="nama"><strong>Nama Pembeli:</strong></label>
+    <input type="text" id="nama" required />
+    <table>
+      <thead>
+        <tr>
+          <th>Menu</th>
+          <th>Harga</th>
+          <th>Jumlah</th>
+          <th>Total per Item</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Ikan Tenggiri</td><td>5000</td><td><input type="number" min="0" value="0" /></td><td class="totalItem">Rp 0</td></tr>
+        <tr><td>Astor Mini</td><td>5000</td><td><input type="number" min="0" value="0" /></td><td class="totalItem">Rp 0</td></tr>
+        <tr><td>Kacang Arab</td><td>5000</td><td><input type="number" min="0" value="0" /></td><td class="totalItem">Rp 0</td></tr>
+        <tr><td>Emping Jagung</td><td>5000</td><td><input type="number" min="0" value="0" /></td><td class="totalItem">Rp 0</td></tr>
+        <tr><td>Basreng Ori</td><td>5000</td><td><input type="number" min="0" value="0" /></td><td class="totalItem">Rp 0</td></tr>
+        <tr><td>Keripik Kaca</td><td>8000</td><td><input type="number" min="0" value="0" /></td><td class="totalItem">Rp 0</td></tr>
+        <tr><td>Pisang Coklat</td><td>10000</td><td><input type="number" min="0" value="0" /></td><td class="totalItem">Rp 0</td></tr>
+      </tbody>
+    </table>
+    <button type="submit">Pesan</button>
+  </form>
+
+  <p id="info" class="success"></p>
+  <p id="waktuPesanan"></p>
+  <p id="totalKeseluruhan"></p>
+  <button id="pesanLagi" style="display: none;">Pesan Lagi</button>
+
+  <!-- Path script diarahkan ke folder frontend -->
+  <script src="/frontend/script.js" defer></script>
+</body>
+</html>
