@@ -40,7 +40,7 @@ app.post("/api/pesan", (req, res) => {
   stmt.finalize();
 });
 
-// Jalankan server
-app.listen(port, () => {
-  console.log(`Backend berjalan di http://localhost:${port}`);
+// Jalankan server, bisa diakses dari luar (Genymotion pakai IP 10.0.3.2)
+app.listen(port, "0.0.0.0", () => {
+  console.log(`✅ Backend berjalan di http://0.0.0.0:${port}`);
 });
