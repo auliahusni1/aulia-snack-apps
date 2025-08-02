@@ -19,10 +19,8 @@ Aplikasi ini adalah project sederhana yang dibuat untuk melakukan **pemesanan ma
 
 
 ## Install APK
-Unduh APK di sini:
-app-release.apk
-Salin ke HP Android lalu instal secara manual.
-Izinkan install dari sumber tidak dikenal jika diminta.
+Unduh APK : app-release.apk
+Salin ke HP Android lalu instal secara manual
 
 ## Deployment Web
 Frontend dan backend sudah terhubung melalui API lokal.
